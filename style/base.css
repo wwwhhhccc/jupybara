@@ -1,0 +1,82 @@
+/*
+    See the JupyterLab Developer Guide for useful CSS Patterns:
+
+    https://jupyterlab.readthedocs.io/en/stable/developer/css.html
+*/
+
+/* .jp-side-panel-widget {
+  height: 30px;
+  width: 150px;
+  margin: 8px;
+  padding-top: 9px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 2px;
+  background-color: #2296f3;
+  color: #212121;
+}
+
+.jp-shout-summary {
+  margin: 4px;
+}
+
+.highlightable-word {
+  cursor: pointer;
+}
+
+.highlightable-word:hover {
+  background-color: orange;
+  color: white;
+}
+
+.highlighted-content {
+  margin-top: 1rem;
+  white-space: pre-wrap; 
+} 
+*/
+
+.jp-LLMCodeCell .jp-InputArea-editor {
+  background-color: #FFE5CC;
+}
+
+.jp-LLMCodeCell .jp-OutputArea-output {
+  background-color: #FFE5CC;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.highlightable-word:hover > span {
+  background-color: orange;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the text */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+

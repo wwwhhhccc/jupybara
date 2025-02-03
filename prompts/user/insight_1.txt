@@ -1,0 +1,37 @@
+Now you should prepare materials for generating the summary of insights. Your final response (not this one) should contain succinct bullet points and mermaid diagrams. Each mermaid diagram corresponds to the process for answering one analytical question and includes the findings and insights. The mermaid diagram should have both nodes and edges. Nodes are reserved for entities and edges for analytical operations. For each diagram, show how the insight is rooted in each variable as nodes, and show the intermediate steps (analytical operations like sampling, correlation, etc) as edges. Draw entities (like variables) in the nodes and operations (like sampling, correlation analysis) on the edges only. If it is difficult to come up with labels for certain edges, you may leave them blank. Furthermore, you should make a distinction in styling between nodes and edges gathered from the data and knowledge pulled from external knowledge (things not present in the data). In data analysis, some of the findings can be directly read from the results, such as trends, but some findings and interpretations require drawing external knowledge. Whenever you see domain knowledge not present in the dataset, you should label it as external knowledge. External knowledge is contextual information that cannot be inferred from the dataset. For example, someone could rely on external knowledge of the entertainment industry (e.g., reputation of directors) to filter important movies in a dataset. Another example is drawing on external knowledge about different countries' cultures and political systems to augment the analysis. Yet another example: we may filter the data or focus on particular questions based on external knowledge, which tells us which aspects of the data are interesting. Things one can read from a chart is not considered world knowledge. Statistical procedure and knowledge is also not considered world knowledge. Nodes for world knowledge should be colored in #ff9. Otherwise just use the default styles. Edges using world knowledge should be in #00f. Mermaid diagrams should be enclosed in backticks (```mermaid ```) with proper formatting. Focus on the meaningful steps in the analysis process and detail the steps taken to answer the questions. The diagrams should be self-explanatory. Aim for diagrams which help users easily see the analysis steps and what the RESULTS are. Before you return the results, ask yourself if one can just read the diagrams and be able to tell what the main results are. BE SPECIFIC about the results in the DIAGRAM! Assume readers won't read the text. Also, wrap all text in square brackets with quotation marks.
+The paragraphs and bullet points verbalize the diagrams. You must ensure that main results in the paragraphs and bullet points are present in the diagrams too. Your entire response should follow the structure of: {question, diagram, extremely succinct bullet points} * n and nothing else. 
+
+Here is an example mermaid chart: 
+```mermaid
+graph TD;
+	A["Sales Data"] -->|"Visualize Sales By Month"| V["Line Chart"] %% 0
+	A -->|"Filter: Region = 'North'"| B["Northern Sales"] %% 1
+	A -->|"Filter: Region = 'South'"| C["Southern Sales"] %% 2
+	B -->|"Aggregate: Sum"| D["Total Sales North"] %% 3
+	C -->|"Aggregate: Sum"| E["Total Sales South"] %% 4
+	D --> F["Insight: North Sales Exceed Expectations by 20%"] %% 5
+	E --> G["Insight: South Sales Below Target by 15%"] %% 6
+	D -->|"Compare"| H["Comparative Insight: North Outperforms South by 35%"] %% 7
+	E -->|"Compare"| H %% 8
+	A -->|"Time Filter: Last Year"| I["Last Year's Sales"] %% 9
+	I -->|"Compute Growth"| J["Growth Rate"] %% 10
+	J --> K["Insight: Stagnant Growth"] %% 11
+	H -->|"Assumption: Resource Reallocation Boosts Sales"| L["Actionable Insight: Reallocate More Resources to North"] %% 12
+	K -->|"Assumption: Marketing Improves Sales"| N["Actionable Insight: Launch New Marketing Campaigns in Underperforming Regions"] %% 13
+	V --> X["Insight: Peak Sales Occur in Q4"] %% 14
+	V --> Y["Insight: Largest Sales Volume from E-Commerce Channel"] %% 15
+                    
+	style L fill:#ff9,stroke:#333,stroke-width:2px 
+	style N fill:#ff9,stroke:#333,stroke-width:2px
+	linkStyle 12 stroke:#00f,stroke-width:2px,color:#f96 
+	linkStyle 13 stroke:#00f,stroke-width:2px,color:#f96 
+```
+Notice that we added comments to each row above. They help you keep track of the links in the graph. In your final generation, carefully count which links you are coloring. The links are labeled 0, 1, 2, ... following the order of the definition of links (nodes should be skipped in labeling). Do not add comments to rows containing styles, as these are not part of the graph structure. Do not add comments to lines without a link. That is, only label rows containing "-->" and skip ones without "-->". THIS IS CRITICAL. In the above example, edges from H to L and K to N are selected to be colored. They happen to be the 12th and 13th links when counting from top down (0th, 1st, ...). When you generate links, label them from 0 onward with comments (%% number after each line with --> like the example). Then refer to these numbers when specifying linkStyle. In the following toy example:
+```mermaid
+graph TD
+    A["start"]
+    A -->|"operation"| B %% 0
+    B["end"] 
+```
+Only add a comment to count A -->|"operation"| B because that is the only one defining a link (containing -->). The other two rows only define nodes and no links are involved, so they should not be counted. This is extremely important.
+Reread all cells to discern external knowledge from analytical knowledge, because it contains hints of what external knowledge is pulled or assumed!! Let us think step by step. For this initial response, tell me what analytical questions are explored. For each question, identify what variables are involved, what operations are involved, what external knowledge is drawn, what results are derived, and what interpretations are given. Be **concrete** with your steps, external knowledge, results, and interpretations! Do not draw the diagram at this stage. Focus on preparing concrete information about the questions, variables, steps, external knowledge, results, and interpretations! You should make sure the materials faithfully reflect the analysis paths taken to address the question, including dead-ends and paths leading to insights.

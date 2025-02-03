@@ -1,0 +1,36 @@
+{
+  "jupyter.lab.shortcuts": [],
+  "title": "llm4eda/will-internship",
+  "description": "llm4eda/will-internship settings.",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false,
+  "jupyter.lab.toolbars": {
+    "Cell": [
+      {
+        "name": "run-code-cell",
+        "command": "toolbar-button:run-code-cell",
+        "rank": 0
+      },
+      {
+        "name": "invoke-ai",
+        "command": "toolbar-button:invoke-ai",
+        "rank": 0
+      }
+    ],
+    "Notebook": [
+      {
+        "name": "invoke-ai",
+        "command": "notebook:invoke-ai"
+      },
+      {
+        "name": "ai-executing",
+        "command": "notebook:ai-executing"
+      },
+      {
+        "name": "stop-aI-execution",
+        "command": "notebook:stop-ai-execution"
+      }
+    ]
+  }
+}

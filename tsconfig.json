@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "composite": false,
+    "declaration": false,
+    "esModuleInterop": true,
+    "incremental": false,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmitOnError": false,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "preserveWatchOutput": true,
+    "resolveJsonModule": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "strict": false,
+    "strictNullChecks": false,
+    "target": "ES2018",
+    "downlevelIteration": true,
+    "allowJs": true,
+    "ignoreDeprecations": "5.0",
+    "noImplicitThis": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "useDefineForClassFields": false
+  },
+  "include": ["src/*"]
+}
