@@ -2,7 +2,7 @@ To get started:
 
 ```bash
 # clone the repository
-git clone git@github.com:wwwhhhccc/llm4eda.git jupybara
+git clone git@github.com:wwwhhhccc/jupybara.git jupybara
 cd jupybara
 
 # create a new environment
