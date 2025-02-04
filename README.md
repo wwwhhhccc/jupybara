@@ -26,7 +26,11 @@ jlpm run build
 jupyter lab
 ```
 
-Once installed, go to llm4eda, open .env, and input your OpenAI and Anthropic API keys.
+Once installed, navigate to the llm4eda folder, create a .env file, and input your OpenAI and Anthropic API keys:
+```
+OPENAI_API_KEY=your_key_here
+CLAUDE_API_KEY=your_key_here
+```
 
 Note that you will need to create a folder named "images" in the same directory as your Jupyter Notebook, since Jupybara will store all images generated there. A future version of Jupybara should automate this.
 
